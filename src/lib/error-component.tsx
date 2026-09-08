@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import type { ErrorComponentProps } from "@tanstack/react-router";
 import { TriangleAlert } from "lucide-react";
 
 const FALLBACK_MESSAGE = "An unexpected error occurred. Try reloading the page.";
+
+const CHUNK_LOAD =
+  /Failed to fetch dynamically imported module|Importing a module script failed|error loading dynamically imported module/i;
 
 function errorMessage(error: unknown): string {
   if (error instanceof Error && error.message) return error.message;
@@ -10,6 +14,15 @@ function errorMessage(error: unknown): string {
 }
 
 export function AppErrorComponent({ error }: ErrorComponentProps) {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!CHUNK_LOAD.test(errorMessage(error))) return;
+    const key = "seeto:chunk-reload";
+    if (sessionStorage.getItem(key) === "1") return;
+    sessionStorage.setItem(key, "1");
+    window.location.reload();
+  }, [error]);
+
   return (
     <main
       className={

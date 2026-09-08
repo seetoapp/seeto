@@ -161,6 +161,33 @@ export default defineConfig(({ command, isPreview }) => ({
     strictPort: true,
   },
   resolve: { tsconfigPaths: true },
+  build: {
+    rollupOptions: {
+      output: {
+        // Keep shared data and the router out of the home entry so lazy
+        // route chunks (e.g. /products) do not import the entry — that
+        // cycle fails in the browser as "Failed to fetch dynamically
+        // imported module".
+        manualChunks(id) {
+          if (
+            id.includes("/src/lib/products") ||
+            id.includes("/src/lib/company")
+          ) {
+            return "data";
+          }
+          if (id.includes("/src/components/")) {
+            return "ui";
+          }
+          if (
+            id.includes("node_modules/@tanstack/react-router") &&
+            !id.includes("react-start")
+          ) {
+            return "router";
+          }
+        },
+      },
+    },
+  },
   plugins: [
     pgliteBootstrapPlugin(),
     // Before tanstackStart so /auth/popup never falls through to the SPA.
