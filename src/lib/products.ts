@@ -66,6 +66,84 @@ export const products: Product[] = [
     ],
   },
   {
+    slug: "maalos",
+    name: "MaalOS",
+    kicker: "Islamic banking",
+    tagline: "Banking systems that speak Murabaha natively.",
+    summary:
+      "A modular platform for Islamic banks — SME financing, digital channels, agency banking and compliance. Shariah-first, on-premise, live in twelve weeks.",
+    body: [
+      "Global cores were not built for this market. Legacy Islamic vendors charge millions, take years, and treat East Africa as an afterthought. MaalOS is the missing piece: a working product that ships, then gets shaped around the bank.",
+      "AAOIFI by design. Deployed on your servers. Configured to your approval hierarchies, document templates and reports — not a two-year rewrite.",
+    ],
+    status: "live",
+    href: "https://maalos.io",
+    hrefLabel: "Open maalos.io",
+    image: "/images/maalos-finance.jpg",
+    gallery: [
+      "/images/maalos-finance.jpg",
+      "/images/maalos-digital.jpg",
+      "/images/ops-room.jpg",
+    ],
+    accent: "Banking",
+    modules: [
+      {
+        title: "MaalOS Finance",
+        copy: "The full Murabaha lifecycle: onboarding, credit, Shariah-compliant contracts, disbursement, installments, collateral and arrears. SS-8, FAS 28, SME.",
+      },
+      {
+        title: "MaalOS Digital",
+        copy: "Internet and mobile banking for retail and corporate customers — web, mobile, mobile money.",
+      },
+      {
+        title: "MaalOS Agency",
+        copy: "Agent and branchless banking for networks that reach past the branch: agents, float, field ops.",
+      },
+      {
+        title: "MaalOS Comply",
+        copy: "KYC, AML/CFT screening and central-bank reporting, with the audit trail already in the grain.",
+      },
+    ],
+  },
+  {
+    slug: "fetchflat",
+    name: "Fetchflat",
+    kicker: "Housing marketplace",
+    tagline: "Find a verified flat. Skip the circus.",
+    summary:
+      "A Nairobi-first marketplace that fetches live, verified rentals and puts tenants in a thread with the person who actually holds the keys.",
+    body: [
+      "House-hunting in Nairobi is still a pile of stale listings, WhatsApp forwards and a viewing that was let yesterday. Fetchflat treats availability as a live signal — photographed, checked, and taken down the moment it is gone.",
+      "Tenants search once. Landlords list once. Seeto runs the matching, the verification, and the moment someone says yes.",
+    ],
+    status: "building",
+    image: "/images/fetchflat-interior.jpg",
+    gallery: [
+      "/images/fetchflat-interior.jpg",
+      "/images/fetchflat-street.jpg",
+      "/images/workshop-exchange.jpg",
+    ],
+    accent: "Housing",
+    modules: [
+      {
+        title: "Live listings",
+        copy: "Units that are actually empty, with photos from the floor — not a brochure from 2019.",
+      },
+      {
+        title: "Verified landlords",
+        copy: "We confirm who is letting the place before anyone spends a Saturday in traffic.",
+      },
+      {
+        title: "Direct thread",
+        copy: "When it matches, both sides land in the same conversation. Deposit and terms stay between them.",
+      },
+      {
+        title: "Taken-down fast",
+        copy: "Let units disappear from the feed. No more 'is this still available?' at 11pm.",
+      },
+    ],
+  },
+  {
     slug: "exchange",
     name: "Seeto Exchange",
     kicker: "Real-time marketplace",

@@ -22,8 +22,9 @@ function ProductsIndex() {
             What we build, <span className="italic">and run.</span>
           </h1>
           <p className="mt-6 max-w-xl text-muted">
-            Seeto is the parent for every product we ship — hospitality, live
-            marketplaces, talent evaluation, and the systems underneath.
+            Seeto is the parent for every product we ship — hospitality,
+            Islamic banking, housing, live marketplaces, talent, and the
+            systems underneath.
           </p>
         </Reveal>
 

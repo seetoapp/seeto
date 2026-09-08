@@ -13,8 +13,8 @@ export function ProductsBand() {
           </p>
           <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <h2 className="max-w-xl font-display text-4xl leading-tight sm:text-5xl">
-              Four products. One company that{" "}
-              <span className="italic">sees them through.</span>
+              The products we run, and{" "}
+              <span className="italic">see through.</span>
             </h2>
             <Link
               to="/products"

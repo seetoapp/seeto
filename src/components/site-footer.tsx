@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Logo, Mark } from "@/components/logo";
 import { addressLine, company, postalLine } from "@/lib/company";
+import { products } from "@/lib/products";
 
 export function SiteFooter() {
   return (
@@ -10,7 +11,8 @@ export function SiteFooter() {
           <Logo />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
             A Nairobi technology company. We design, ship and operate live
-            products for hospitality, marketplaces and high-concurrency systems.
+            products for hospitality, Islamic banking, housing and
+            high-concurrency systems.
           </p>
         </div>
         <div className="grid gap-10 sm:grid-cols-3 md:col-span-7">
@@ -19,26 +21,17 @@ export function SiteFooter() {
               Products
             </p>
             <ul className="mt-4 space-y-2 text-sm">
-              <li>
-                <Link to="/products/$slug" params={{ slug: "rayso" }} className="hover:text-primary">
-                  Rayso
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/$slug" params={{ slug: "exchange" }} className="hover:text-primary">
-                  Seeto Exchange
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/$slug" params={{ slug: "marhaba" }} className="hover:text-primary">
-                  Marhaba
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/$slug" params={{ slug: "systems" }} className="hover:text-primary">
-                  Seeto Systems
-                </Link>
-              </li>
+              {products.map((product) => (
+                <li key={product.slug}>
+                  <Link
+                    to="/products/$slug"
+                    params={{ slug: product.slug }}
+                    className="hover:text-primary"
+                  >
+                    {product.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
