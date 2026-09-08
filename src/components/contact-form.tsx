@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const interests = [
   "Rayso — Hospitality OS",
   "MaalOS — Islamic banking",
-  "Fetchflat",
+  "Fetchflat — Fetch + extract API",
   "Seeto Exchange",
   "Marhaba",
   "Seeto Systems",

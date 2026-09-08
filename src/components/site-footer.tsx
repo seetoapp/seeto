@@ -11,7 +11,7 @@ export function SiteFooter() {
           <Logo />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
             A Nairobi technology company. We design, ship and operate live
-            products for hospitality, Islamic banking, housing and
+            products for hospitality, Islamic banking, APIs and
             high-concurrency systems.
           </p>
         </div>

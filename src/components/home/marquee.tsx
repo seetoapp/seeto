@@ -1,7 +1,7 @@
 const items = [
   "Hospitality OS",
   "Islamic finance",
-  "Housing marketplaces",
+  "Fetch + extract APIs",
   "Real-time matching",
   "Payments & wallets",
   "Distributed systems",
