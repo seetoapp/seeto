@@ -79,11 +79,11 @@ export const products: Product[] = [
     status: "live",
     href: "https://maalos.io",
     hrefLabel: "Open maalos.io",
-    image: "/images/maalos-finance.jpg",
+    image: "/images/maalos-hall.jpg",
     gallery: [
-      "/images/maalos-finance.jpg",
+      "/images/maalos-hall.jpg",
+      "/images/maalos-credit.jpg",
       "/images/maalos-digital.jpg",
-      "/images/maalos-boardroom.jpg",
     ],
     accent: "Banking",
     modules: [
