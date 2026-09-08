@@ -83,7 +83,7 @@ export const products: Product[] = [
     gallery: [
       "/images/maalos-finance.jpg",
       "/images/maalos-digital.jpg",
-      "/images/ops-room.jpg",
+      "/images/maalos-boardroom.jpg",
     ],
     accent: "Banking",
     modules: [
