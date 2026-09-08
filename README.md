@@ -13,9 +13,25 @@ npm install
 npm run dev
 ```
 
-## Production
+## Production (Docker)
 
 ```bash
-npm run build
-npm start
+docker compose up --build
+```
+
+The image listens on port 8080. Map it as needed (`-p 80:8080`).
+
+```bash
+docker build -t seeto .
+docker run --rm -p 8080:8080 seeto
+```
+
+No database is required.
+
+## Production (Node)
+
+```bash
+npm install
+NITRO_PRESET=node-server npm run build
+node .output/server/index.mjs
 ```
