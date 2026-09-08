@@ -150,6 +150,10 @@ export default defineConfig(({ command, isPreview }) => ({
     host: "0.0.0.0",
     port: 8080,
     strictPort: true,
+    headers: {
+      "X-Robots-Tag":
+        "noindex, nofollow, noarchive, nosnippet, noimageindex, nocache",
+    },
   },
   preview: {
     host: "127.0.0.1",
