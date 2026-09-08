@@ -1,6 +1,6 @@
 # SEETO COMMUNICATION LIMITED
 
-Company website for [SEETO](https://seeto.app) — a Nairobi technology company building Rayso, MaalOS, Fetchflat, Seeto Exchange, Marhaba and Seeto Systems.
+Company website for [SEETO](https://seeto.app) — a Nairobi technology company building Rayso, MaalOS, Fetchflat, Seeto Exchange and Seeto Systems.
 
 ## Stack
 

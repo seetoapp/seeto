@@ -8,7 +8,6 @@ const interests = [
   "MaalOS — Islamic banking",
   "Fetchflat — Fetch + extract API",
   "Seeto Exchange",
-  "Marhaba",
   "Seeto Systems",
   "Partnership",
   "Other",

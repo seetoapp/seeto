@@ -91,7 +91,7 @@ export function CompanyPage() {
               </p>
               <p className="mt-6 text-sm leading-relaxed text-muted">
                 Founder and technical principal. Systems architecture, product
-                and the operating company behind Rayso, Seeto Exchange, Marhaba
+                and the operating company behind Rayso, MaalOS, Fetchflat
                 and Seeto Systems.
               </p>
             </div>

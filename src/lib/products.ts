@@ -180,40 +180,6 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "marhaba",
-    name: "Marhaba",
-    kicker: "Engineering talent",
-    tagline: "See how an engineer actually thinks.",
-    summary:
-      "Structured evaluation for hiring engineering talent — systems design, take-homes and live work that go deeper than a CV.",
-    body: [
-      "Marhaba is how we evaluate engineers the way we would want to be evaluated: on architecture, trade-offs and the quality of the work, not on theatre.",
-      "It is being built in Nairobi for teams that hire across East Africa and need a signal they can trust.",
-    ],
-    status: "building",
-    image: "/images/studio.jpg",
-    gallery: ["/images/studio.jpg", "/images/ops-room.jpg"],
-    accent: "Talent",
-    modules: [
-      {
-        title: "Systems design",
-        copy: "Scored design interviews that reveal how a candidate reasons under constraint.",
-      },
-      {
-        title: "Take-home work",
-        copy: "Short, realistic tasks with a rubric — not weekend-long unpaid projects.",
-      },
-      {
-        title: "Live pairing",
-        copy: "A structured session that watches collaboration, not just syntax.",
-      },
-      {
-        title: "Signal, not theatre",
-        copy: "Reports written for hiring managers who have to make a call this week.",
-      },
-    ],
-  },
-  {
     slug: "systems",
     name: "Seeto Systems",
     kicker: "Custom platforms",

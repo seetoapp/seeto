@@ -8,7 +8,6 @@ const items = [
   "Offline-first POS",
   "Murabaha lifecycle",
   "Mobile money",
-  "Engineering talent",
   "Edge operations",
 ];
 
