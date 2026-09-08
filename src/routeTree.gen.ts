@@ -14,6 +14,8 @@ import { Route as CompanyRouteImport } from './routes/company'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
+import { Route as VolunteerIndexRouteImport } from './routes/volunteer.index'
+import { Route as VolunteerSlugRouteImport } from './routes/volunteer.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,20 +42,34 @@ const ProductsSlugRoute = ProductsSlugRouteImport.update({
   path: '/products/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VolunteerIndexRoute = VolunteerIndexRouteImport.update({
+  id: '/volunteer/',
+  path: '/volunteer/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VolunteerSlugRoute = VolunteerSlugRouteImport.update({
+  id: '/volunteer/$slug',
+  path: '/volunteer/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/company': typeof CompanyRoute
   '/contact': typeof ContactRoute
   '/products/$slug': typeof ProductsSlugRoute
+  '/volunteer/$slug': typeof VolunteerSlugRoute
   '/products/': typeof ProductsIndexRoute
+  '/volunteer/': typeof VolunteerIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/company': typeof CompanyRoute
   '/contact': typeof ContactRoute
   '/products/$slug': typeof ProductsSlugRoute
+  '/volunteer/$slug': typeof VolunteerSlugRoute
   '/products': typeof ProductsIndexRoute
+  '/volunteer': typeof VolunteerIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -61,20 +77,38 @@ export interface FileRoutesById {
   '/company': typeof CompanyRoute
   '/contact': typeof ContactRoute
   '/products/$slug': typeof ProductsSlugRoute
+  '/volunteer/$slug': typeof VolunteerSlugRoute
   '/products/': typeof ProductsIndexRoute
+  '/volunteer/': typeof VolunteerIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/company' | '/contact' | '/products/$slug' | '/products/'
+  fullPaths:
+    | '/'
+    | '/company'
+    | '/contact'
+    | '/products/$slug'
+    | '/volunteer/$slug'
+    | '/products/'
+    | '/volunteer/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/company' | '/contact' | '/products/$slug' | '/products'
+  to:
+    | '/'
+    | '/company'
+    | '/contact'
+    | '/products/$slug'
+    | '/volunteer/$slug'
+    | '/products'
+    | '/volunteer'
   id:
     | '__root__'
     | '/'
     | '/company'
     | '/contact'
     | '/products/$slug'
+    | '/volunteer/$slug'
     | '/products/'
+    | '/volunteer/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -82,7 +116,9 @@ export interface RootRouteChildren {
   CompanyRoute: typeof CompanyRoute
   ContactRoute: typeof ContactRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
+  VolunteerSlugRoute: typeof VolunteerSlugRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
+  VolunteerIndexRoute: typeof VolunteerIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -122,6 +158,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/volunteer/': {
+      id: '/volunteer/'
+      path: '/volunteer'
+      fullPath: '/volunteer/'
+      preLoaderRoute: typeof VolunteerIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/volunteer/$slug': {
+      id: '/volunteer/$slug'
+      path: '/volunteer/$slug'
+      fullPath: '/volunteer/$slug'
+      preLoaderRoute: typeof VolunteerSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -130,7 +180,9 @@ const rootRouteChildren: RootRouteChildren = {
   CompanyRoute: CompanyRoute,
   ContactRoute: ContactRoute,
   ProductsSlugRoute: ProductsSlugRoute,
+  VolunteerSlugRoute: VolunteerSlugRoute,
   ProductsIndexRoute: ProductsIndexRoute,
+  VolunteerIndexRoute: VolunteerIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

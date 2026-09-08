@@ -92,7 +92,7 @@ export function CompanyPage() {
               <p className="mt-6 text-sm leading-relaxed text-muted">
                 Founder and technical principal. Systems architecture, product
                 and the operating company behind Rayso, MaalOS, Fetchflat
-                and Seeto Systems.
+                and Seeto Systems. Volunteer work includes Turaath and Thahabi.
               </p>
             </div>
             <div className="rounded-xl bg-elevated p-7">

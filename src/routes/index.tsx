@@ -6,6 +6,7 @@ import { ProductsBand } from "@/components/home/products-band";
 import { RaysoStrip } from "@/components/home/rayso-strip";
 import { Story } from "@/components/home/story";
 import { Trust } from "@/components/home/trust";
+import { VolunteerBand } from "@/components/home/volunteer-band";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -25,6 +26,7 @@ function Home() {
       <Hero />
       <CapabilityMarquee />
       <ProductsBand />
+      <VolunteerBand />
       <Story />
       <RaysoStrip />
       <Trust />

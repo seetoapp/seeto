@@ -171,6 +171,7 @@ export default defineConfig(({ command, isPreview }) => ({
         manualChunks(id) {
           if (
             id.includes("/src/lib/products") ||
+            id.includes("/src/lib/projects") ||
             id.includes("/src/lib/company")
           ) {
             return "data";

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Logo, Mark } from "@/components/logo";
 import { addressLine, company, postalLine } from "@/lib/company";
 import { products } from "@/lib/products";
+import { projects } from "@/lib/projects";
 
 export function SiteFooter() {
   return (
@@ -15,7 +16,7 @@ export function SiteFooter() {
             high-concurrency systems.
           </p>
         </div>
-        <div className="grid gap-10 sm:grid-cols-3 md:col-span-7">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 md:col-span-7">
           <div>
             <p className="text-[11px] tracking-[0.22em] text-subtle uppercase">
               Products
@@ -29,6 +30,24 @@ export function SiteFooter() {
                     className="hover:text-primary"
                   >
                     {product.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-[11px] tracking-[0.22em] text-subtle uppercase">
+              Volunteer
+            </p>
+            <ul className="mt-4 space-y-2 text-sm">
+              {projects.map((project) => (
+                <li key={project.slug}>
+                  <Link
+                    to="/volunteer/$slug"
+                    params={{ slug: project.slug }}
+                    className="hover:text-primary"
+                  >
+                    {project.name}
                   </Link>
                 </li>
               ))}

@@ -35,7 +35,8 @@ export function Story() {
               Seeto is a product studio and an operating company. We ship our
               own platforms, and we build the infrastructure other teams cannot
               afford to get wrong — real-time matching, wallets, mobility, and
-              the backends underneath.
+              the backends underneath. We also give time to heritage work:
+              Turaath and Thahabi.
             </p>
           </Reveal>
         </div>

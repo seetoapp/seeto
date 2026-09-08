@@ -9,6 +9,8 @@ const interests = [
   "Fetchflat — Fetch + extract API",
   "Seeto Exchange",
   "Seeto Systems",
+  "Turaath — Volunteer",
+  "Thahabi — Volunteer",
   "Partnership",
   "Other",
 ];
