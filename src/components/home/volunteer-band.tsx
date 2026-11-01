@@ -4,6 +4,15 @@ import { Reveal } from "@/components/reveal";
 import { projects } from "@/lib/projects";
 import { statusLabel } from "@/lib/products";
 
+function domainOf(href?: string) {
+  if (!href) return null;
+  try {
+    return new URL(href).hostname.replace(/^www\./, "");
+  } catch {
+    return href;
+  }
+}
+
 export function VolunteerBand() {
   return (
     <section id="volunteer" className="bg-surface py-24 text-fg sm:py-32">
@@ -26,8 +35,7 @@ export function VolunteerBand() {
             </Link>
           </div>
           <p className="mt-6 max-w-xl text-muted">
-            Heritage platforms we build and keep running — a Somali scholarly
-            archive, and a Shamilah of more than twenty-nine thousand books.
+            Heritage platforms we build and keep running — turaath.so and thahabi.org.
           </p>
         </Reveal>
 
@@ -56,6 +64,11 @@ export function VolunteerBand() {
                       {project.kicker}
                     </p>
                     <h3 className="mt-1 text-xl font-medium">{project.name}</h3>
+                    {domainOf(project.href) && (
+                      <p className="mt-1 font-mono text-xs tracking-wide text-primary">
+                        {domainOf(project.href)}
+                      </p>
+                    )}
                     <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">
                       {project.tagline}
                     </p>
