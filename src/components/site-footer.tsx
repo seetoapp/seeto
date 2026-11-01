@@ -4,6 +4,15 @@ import { addressLine, company, postalLine } from "@/lib/company";
 import { products } from "@/lib/products";
 import { projects } from "@/lib/projects";
 
+function domainOf(href?: string) {
+  if (!href) return null;
+  try {
+    return new URL(href).hostname.replace(/^www\./, "");
+  } catch {
+    return href;
+  }
+}
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-bg text-fg">
@@ -48,6 +57,11 @@ export function SiteFooter() {
                     className="hover:text-primary"
                   >
                     {project.name}
+                    {domainOf(project.href) && (
+                      <span className="block text-xs text-subtle">
+                        {domainOf(project.href)}
+                      </span>
+                    )}
                   </Link>
                 </li>
               ))}
