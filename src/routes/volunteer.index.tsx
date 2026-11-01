@@ -11,6 +11,15 @@ export const Route = createFileRoute("/volunteer/")({
   }),
 });
 
+function domainOf(href?: string) {
+  if (!href) return null;
+  try {
+    return new URL(href).hostname.replace(/^www\./, "");
+  } catch {
+    return href;
+  }
+}
+
 function VolunteerIndex() {
   return (
     <main className="bg-bg pt-28 pb-24 text-fg sm:pt-32">
@@ -24,8 +33,8 @@ function VolunteerIndex() {
           </h1>
           <p className="mt-6 max-w-xl text-muted">
             Seeto builds commercial products. We also give time to heritage
-            platforms — a Somali scholarly archive, and a digital Shamilah —
-            because the work is worth doing.
+            platforms — turaath.so and thahabi.org — because the work is
+            worth doing.
           </p>
         </Reveal>
 
@@ -55,6 +64,11 @@ function VolunteerIndex() {
                       </span>
                     </div>
                     <h2 className="mt-3 text-3xl font-medium">{project.name}</h2>
+                    {domainOf(project.href) && (
+                      <p className="mt-1 font-mono text-sm tracking-wide text-primary">
+                        {domainOf(project.href)}
+                      </p>
+                    )}
                     <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted sm:text-base">
                       {project.summary}
                     </p>
