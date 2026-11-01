@@ -28,9 +28,19 @@ export const Route = createFileRoute("/volunteer/$slug")({
   }),
 });
 
+function domainOf(href?: string) {
+  if (!href) return null;
+  try {
+    return new URL(href).hostname.replace(/^www\./, "");
+  } catch {
+    return href;
+  }
+}
+
 function VolunteerPage() {
   const { project } = useLoaderData({ from: "/volunteer/$slug" });
   const others = projects.filter((p) => p.slug !== project.slug);
+  const domain = domainOf(project.href);
 
   return (
     <main className="bg-bg pt-24 text-fg">
@@ -55,6 +65,11 @@ function VolunteerPage() {
           <h1 className="mt-3 font-display text-5xl leading-[0.95] sm:text-7xl">
             {project.name}
           </h1>
+          {domain && (
+            <p className="mt-3 font-mono text-sm tracking-wide text-primary">
+              {domain}
+            </p>
+          )}
           <p className="mt-5 max-w-xl text-lg text-muted">{project.tagline}</p>
           {project.href && (
             <div className="mt-8">
@@ -88,6 +103,25 @@ function VolunteerPage() {
             <p className="mt-2 text-lg">
               Volunteer · {statusLabel[project.status]}
             </p>
+            {domain && (
+              <>
+                <p className="mt-6 text-[11px] tracking-[0.22em] text-subtle uppercase">
+                  Site
+                </p>
+                <p className="mt-2 font-mono text-sm">
+                  {project.href && (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-primary"
+                    >
+                      {domain}
+                    </a>
+                  )}
+                </p>
+              </>
+            )}
             <p className="mt-6 text-[11px] tracking-[0.22em] text-subtle uppercase">
               Line
             </p>
@@ -156,6 +190,11 @@ function VolunteerPage() {
                   {p.kicker}
                 </p>
                 <p className="mt-2 text-lg">{p.name}</p>
+                {domainOf(p.href) && (
+                  <p className="mt-1 font-mono text-xs text-primary">
+                    {domainOf(p.href)}
+                  </p>
+                )}
               </Link>
             ))}
           </div>
